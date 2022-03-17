@@ -1,0 +1,29 @@
+{
+  "name": "sd-0x-project-talker-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --runInBand",
+    "restore": "cp tests/seed.json talker.json",
+    "start": "node index.js",
+    "dev": "nodemon index.js --ignore 'talker.json'",
+    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "crypto-js": "4.0.0",
+    "express": "4.17.1",
+    "express-rescue": "1.1.30"
+  },
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-trybe-backend": "1.0.1",
+    "frisby": "2.1.3",
+    "jest": "26.6.1",
+    "nodemon": "2.0.15"
+  }
+}

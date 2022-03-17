@@ -1,0 +1,4 @@
+ignore_files:
+  - tests/
+  - .eslintrc.json
+  - .eslintignore
