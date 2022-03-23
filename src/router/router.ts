@@ -5,10 +5,9 @@ import { testController } from '../controllers/testController';
 const router: Router = Router();
 
 router.get('/', testController.home);
-// router.get('/', (_request:Request, response: Response) => {
-//   response.status(HTTP_OK_STATUS).send();
-// });
 
-router.get('/talker', getAllTalkerController.getAllTalker);  
+router.get('/talker', getAllTalkerController.getAllTalker);
+
+router.get('/talker/:id', getAllTalkerController.getTalkerByUserId); 
 
 export { router };
