@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { getAllTalkersService } from "../services/getAllTalkersService";
+import { getAllTalkersService } from "../services/getTalkersService";
 
 class GetAllTalkerController {
 

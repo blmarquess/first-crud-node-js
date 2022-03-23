@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getAllTalkerController } from '../controllers/getAllTalkerController';
+import { getAllTalkerController } from '../controllers/getTalkerController';
 import { testController } from '../controllers/testController';
 
 const router: Router = Router();
