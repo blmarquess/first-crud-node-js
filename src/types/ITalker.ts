@@ -1,5 +1,5 @@
-interface ITalkerInfo {
-  watched?: string[];
+export interface ITalkerInfo {
+  watchedAt?: string;
   rate?: number;
 }
 
