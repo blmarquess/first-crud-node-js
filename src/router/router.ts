@@ -3,6 +3,7 @@ import { createTalkerController } from "../controllers/createTalkerController";
 import { deleteTalkerController } from "../controllers/deleteTalkerController";
 import { getAllTalkerController } from "../controllers/getTalkerController";
 import { loginController } from "../controllers/loginController";
+import { searchController } from "../controllers/searchController";
 import { testController } from "../controllers/testController";
 import { updateTalkerController } from "../controllers/updateTalkerController";
 
@@ -16,6 +17,8 @@ router.get("/", testController.home);
 router.post("/login", loginController.login);
 
 router.get("/talker", getAllTalkerController.getAllTalker);
+
+router.get("/talker/search", authMiddleware.token, searchController.search);
 
 router.get("/talker/:id", getAllTalkerController.getTalkerByUserId);
 
