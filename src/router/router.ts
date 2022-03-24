@@ -4,6 +4,7 @@ import { getAllTalkerController } from "../controllers/getTalkerController";
 import { loginController } from "../controllers/loginController";
 import { testController } from "../controllers/testController";
 import { authMiddleware } from "../middlewares/authMiddleware";
+import { validatorTalkerMiddleware } from "../middlewares/validatorTalkerMiddleware";
 
 const router: Router = Router();
 
@@ -15,8 +16,10 @@ router.get("/talker", getAllTalkerController.getAllTalker);
 
 router.get("/talker/:id", getAllTalkerController.getTalkerByUserId);
 
-router.use(authMiddleware.token);
+router.use(authMiddleware.token, validatorTalkerMiddleware.createTalker);
 
 router.post("/talker", createTalkerController.createTalker);
+
+router.get("/talker/:id", getAllTalkerController.getTalkerByUserId);
 
 export { router };

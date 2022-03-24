@@ -1,3 +1,4 @@
+import { NextFunction, Request, Response } from "express";
 import { ITalker } from "../types/ITalker";
 import {
   hasUndefined,
@@ -32,14 +33,18 @@ const talkerStackTest = (req: ITalker) => {
   return { status: true, msgError: "User OK..." };
 };
 
-export class ValidatorTalkerService {
-  public async createTalker(req: ITalker) {
-    const talkerStack = talkerStackTest(req);
+export class ValidatorTalkerMiddleware {
+  public async createTalker(
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ): Promise<Response | void> {
+    const talkerStack = talkerStackTest(req.body);
     if (!talkerStack.status) {
-      throw new Error(talkerStack.msgError);
+      return res.status(400).json({ message: talkerStack.msgError });
     }
-    return talkerStack;
+    return next();
   }
 }
 
-export const validatorTalkerService = new ValidatorTalkerService();
+export const validatorTalkerMiddleware = new ValidatorTalkerMiddleware();
