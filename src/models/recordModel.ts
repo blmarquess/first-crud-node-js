@@ -8,6 +8,18 @@ export class RecordModel extends DataBase {
 
     await this.writer(JSON.stringify(newData));
   }
+
+  public async update(talker: ITalker): Promise<ITalker | void> {
+    const data = await this.reader();
+    const newData = data.map((item: ITalker) => {
+      if (item.id === talker.id) {
+        return talker;
+      }
+      return item;
+    });
+
+    await this.writer(JSON.stringify(newData));
+  }
 }
 
 export const recordModel = new RecordModel();
