@@ -1,10 +1,10 @@
-import { database } from "../models/database";
-import { modelTalker } from "../models/talkerModel";
+import { readerDataModel } from "../models/readerModel";
+import { recordModel } from "../models/recordModel";
 import { ITalker } from "../types/ITalker";
 
 class MakeTalkerService {
   public async execute(talker: ITalker): Promise<any> {
-    const dbIDs = await database.reader();
+    const dbIDs = await readerDataModel.readerAll();
     const maxID = Math.max(...dbIDs.map((item: ITalker) => item.id));
 
     const newTalker: ITalker = {
@@ -14,7 +14,7 @@ class MakeTalkerService {
       id: maxID + 1,
     };
 
-    await modelTalker.create(newTalker);
+    await recordModel.create(newTalker);
 
     return newTalker;
   }
