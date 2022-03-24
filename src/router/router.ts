@@ -3,6 +3,8 @@ import { createTalkerController } from "../controllers/createTalkerController";
 import { getAllTalkerController } from "../controllers/getTalkerController";
 import { loginController } from "../controllers/loginController";
 import { testController } from "../controllers/testController";
+import { updateTalkerController } from "../controllers/updateTalkerController";
+
 import { authMiddleware } from "../middlewares/authMiddleware";
 import { validatorTalkerMiddleware } from "../middlewares/validatorTalkerMiddleware";
 
@@ -20,6 +22,6 @@ router.use(authMiddleware.token, validatorTalkerMiddleware.createTalker);
 
 router.post("/talker", createTalkerController.createTalker);
 
-router.get("/talker/:id", getAllTalkerController.getTalkerByUserId);
+router.put("/talker/:id", updateTalkerController.updateTalker);
 
 export { router };
