@@ -1,6 +1,5 @@
 import fs from 'fs/promises';
-import path from 'path';
-import { ITalker } from "../types/ITalker";
+import path from "path";
 
 export class DataBase {
   public async reader() {
@@ -14,12 +13,6 @@ export class DataBase {
   public async writer(data: string) {
     await fs.writeFile(path.resolve(__dirname, "../../talker.json"), data);
     return;
-  }
-
-  public async addNewTalker(talker: ITalker) {
-    const data = await this.reader();
-    const newData = [...data, talker];
-    await this.writer(JSON.stringify(newData));
   }
 }
 

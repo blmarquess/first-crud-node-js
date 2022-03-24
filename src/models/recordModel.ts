@@ -20,6 +20,13 @@ export class RecordModel extends DataBase {
 
     await this.writer(JSON.stringify(newData));
   }
+
+  public async delete(id: number): Promise<ITalker | void> {
+    const data = await this.reader();
+    const newData = data.filter((item: ITalker) => item.id !== id);
+
+    await this.writer(JSON.stringify(newData));
+  }
 }
 
 export const recordModel = new RecordModel();
