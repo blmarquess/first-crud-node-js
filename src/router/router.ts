@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { createTalkerController } from "../controllers/createTalkerController";
+import { deleteTalkerController } from "../controllers/deleteTalkerController";
 import { getAllTalkerController } from "../controllers/getTalkerController";
 import { loginController } from "../controllers/loginController";
 import { testController } from "../controllers/testController";
@@ -18,10 +19,15 @@ router.get("/talker", getAllTalkerController.getAllTalker);
 
 router.get("/talker/:id", getAllTalkerController.getTalkerByUserId);
 
-router.use(authMiddleware.token, validatorTalkerMiddleware.createTalker);
+router.use(authMiddleware.token);
+
+router.delete("/talker/:id", deleteTalkerController.deleteTalker);
+
+router.use(validatorTalkerMiddleware.createTalker);
 
 router.post("/talker", createTalkerController.createTalker);
 
 router.put("/talker/:id", updateTalkerController.updateTalker);
+
 
 export { router };
