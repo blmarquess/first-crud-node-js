@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { registerTalkerService } from "../services/registerTalkerService";
+import { makeTalkerService } from "../services/makeTalkerService";
 import { validatorTalkerService } from "../services/validatorTalkerService";
 
 export class CreateTalkerController {
@@ -7,9 +7,9 @@ export class CreateTalkerController {
     try {
       const newTalker = await validatorTalkerService.createTalker(req.body);
       if (newTalker.status) {
-        await registerTalkerService.execute(req.body);
+        const regiTalker = await makeTalkerService.execute(req.body);
+        return res.status(201).json(regiTalker);
       }
-      return res.status(201).json(newTalker);
     } catch (error) {
       return res.status(400).json({ message: error.message });
     }
