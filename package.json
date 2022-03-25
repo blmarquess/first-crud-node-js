@@ -1,5 +1,5 @@
 {
-  "name": "sd-0x-project-talker-manager",
+  "name": "first-crud-node-js",
   "version": "1.0.0",
   "description": "TypeScript Version of the Talker Manager",
   "main": "index.ts",
@@ -7,8 +7,7 @@
     "test": "jest --runInBand",
     "restore": "cp tests/seed.json talker.json",
     "start": "ts-node --transpileOnly index.ts",
-    "dev": "nodemon index.ts --ignore 'talker.json'",
-    "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json ."
+    "dev": "nodemon index.ts --ignore 'talker.json'"
   },
   "keywords": [],
   "author": "",

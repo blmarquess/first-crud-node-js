@@ -4,7 +4,7 @@ import { searchService } from "../services/searchService";
 export class SearchController {
   public async search(req: Request, res: Response): Promise<Response> {
     const resQuery = req.query.q.toString();
-    console.log(resQuery);
+
     try {
       const talkerSearch = await searchService.search(resQuery);
       return res.status(200).json(talkerSearch);
