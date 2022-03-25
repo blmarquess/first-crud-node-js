@@ -4,7 +4,7 @@ import { ITalker } from "../types/ITalker";
 class SearchService {
   public async search(term: string): Promise<ITalker[]> {
     const results = await readerDataModel.readerByName(term);
-    console.log(results, term);
+
     return results;
   }
 }
