@@ -62,7 +62,7 @@ Neste projeto, verificamos se você é capaz de:
 >Precisa ter o Git e NodeJS instalado e funcionando na maquina
 
 Abra o emulador de terminal e clone o repositório:
->precisa estar logado no github caso contrario baixe o arquivo .zip aqui
+>precisa estar logado no github caso contrario baixe o arquivo .zip [aqui](https://github.com/blmarquess/first-crud-node-js/releases/download/release/first-crud-node-js-main.zip)
 
 ```shell
 git clone git@github.com:blmarquess/first-crud-node-js.git
