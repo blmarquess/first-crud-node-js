@@ -112,3 +112,10 @@ Agora pode acessar o endereço <http://localhost:3000/talker> para ver o resulta
   </a>
 </p>
 <div>
+  
+ 
+ <div align='center'>
+		
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/N4N2DC6XA)
+		
+</div>
